@@ -1,15 +1,24 @@
 // import logo from './logo.svg';
+// import React, { Component } from "react";
+
 import "./App.css";
+import Navbar from "./Component/Navbar.js";
 
 function App() {
+  let menu = document.querySelector("#menu-btn");
+  let navbar = document.querySelector(".header .navbar");
+
+  menu.onclick = () => {
+    menu.classList.toggle("fa-times");
+    navbar.classList.toggle("active");
+  };
+  window.onscroll = () => {
+    menu.classList.remove("fa-times");
+    navbar.classList.remove("active");
+  };
   return (
     <>
-      <h1> hi am zaid </h1>
-      <P>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, sapiente
-        natus minima sunt quibusdam itaque deleniti. Optio hic harum quisquam
-        repellat minima, commodi labore non excepturi esse corporis eveniet sed!
-      </P>
+      <Navbar />
     </>
   );
 }
